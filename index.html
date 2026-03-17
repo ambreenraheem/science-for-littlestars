@@ -9,7 +9,19 @@
   <!-- Accent color for home page (green — general/brand color) -->
   <style>
     :root { --accent: #3cb35a; --accent-light: #d1fae5; }
+
+    /* ✅ CHANGE 1: Twemoji emoji images ka size control */
+    img.emoji {
+      height: 1em;
+      width: 1em;
+      vertical-align: -0.1em;
+      display: inline-block;
+    }
   </style>
+
+  <!-- ✅ CHANGE 2: Twemoji CDN — same emojis on ALL devices -->
+  <script src="https://cdn.jsdelivr.net/npm/twemoji@14.0.2/dist/twemoji.min.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
@@ -234,5 +246,11 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <!-- ✅ CHANGE 3: Twemoji parse — saare emojis same dikhenge har device pe -->
+  <script>
+    twemoji.parse(document.body, { folder: 'svg', ext: '.svg' });
+  </script>
+
 </body>
 </html>
